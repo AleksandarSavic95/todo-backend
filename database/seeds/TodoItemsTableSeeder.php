@@ -19,7 +19,8 @@ class TodoItemsTableSeeder extends Seeder
                 'title' => $faker->sentence($nbWords = 2),
                 'content' => $faker->paragraph,
                 'priority' => 0,
-                'done' => false
+                'is_done' => false,
+                'user_id' => random_int(1,3)
             ]);
         }
 

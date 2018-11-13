@@ -15,11 +15,12 @@ class CreateTodoItemsTable extends Migration
     {
         Schema::create('todo_items', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
             $table->string('title', 50);
-            $table->string('content');
+            $table->text('content');
             $table->integer('priority');
-            $table->boolean('done');
+            $table->boolean('is_done');
         });
     }
 
