@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 4; $i++) {
             User::create([
                 'name' => $faker->sentence($nbWords = 2),
                 'email' => str_random(4) . '@gmail.com',
