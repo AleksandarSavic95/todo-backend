@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use \App\TodoItem;
 
+include(app_path() . '/constants.php');
 
 class TodoItemsTableSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class TodoItemsTableSeeder extends Seeder
             TodoItem::create([
                 'title' => $faker->sentence($nbWords = 2),
                 'content' => $faker->paragraph,
-                'priority' => 0,
+                'priority' => $faker->randomElement([Priority::$PRIORITY_LOW, Priority::$PRIORITY_MEDIUM, Priority::$PRIORITY_HIGH]),
                 'is_done' => false,
                 'user_id' => random_int(1,3)
             ]);
