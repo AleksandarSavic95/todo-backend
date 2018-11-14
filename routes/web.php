@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// one to many obtain test
+// https://laravel.com/docs/5.6/eloquent-relationships#one-to-many
+Route::get('/users/{userId}/todoitems', function($userId) {
+    echo App\User::find($userId)->todoItems;
+});
