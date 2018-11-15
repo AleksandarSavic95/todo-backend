@@ -33,11 +33,9 @@ Route::group([
 
 });
 
-// CRUD API
-// Route::apiResource('todoItems', 'API\TodoItemController');
-
 Route::get('todoitems', 'TodoItemController@index');
 Route::get('todoitems/{todoItem}', 'TodoItemController@show');
+
 Route::post('todoitems', 'TodoItemController@store');
 Route::put('todoitems/{todoItem}', 'TodoItemController@update');
 Route::delete('todoitems/{todoItem}', 'TodoItemController@delete');
