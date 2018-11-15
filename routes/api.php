@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::group([
 
@@ -32,3 +32,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::get('todoitems', 'TodoItemController@index');
+Route::get('todoitems/{todoItem}', 'TodoItemController@show');
+
+Route::post('todoitems', 'TodoItemController@store');
+Route::put('todoitems/{todoItem}', 'TodoItemController@update');
+Route::delete('todoitems/{todoItem}', 'TodoItemController@delete');
